@@ -10,14 +10,14 @@ class Contact(models.Model):
     def __str__(self):
         return self.name
     
-class Ind_Donator(models.Model):
+class Donator(models.Model):
     Donator_Id = models.IntegerField(primary_key=True,null=False)
     Name = models.CharField(max_length = 100)
     Contact_No = models.CharField(max_length = 20)
     Address = models.CharField(max_length = 100)
     Email = models.CharField(max_length = 50)
-    Ind_location = models.CharField(max_length = 100)
-    Aadhar_No = models.IntegerField()
+    Don_location = models.CharField(max_length = 100)
+    Ver_Prrof = models.IntegerField()
     Ewaste_Id = models.ForeignKey()
     
 class Collector(models.Model):
@@ -27,10 +27,8 @@ class Collector(models.Model):
     Address = models.CharField(max_length = 100)
     Email = models.CharField(max_length = 50)
     JC_Location = models.CharField(max_length = 100)
-    Aadhar_No =  models.IntegerField()
+    Ver_Proof =  models.IntegerField()
     Vehicle = models.CharField(max_length = 100)
-    Donator_Id =  models.IntegerField()
-    JD_Id =  models.ForeignKey()
     Ewaste_Id = models.ForeignKey()
 
 class Dealer(models.Model):
@@ -39,11 +37,10 @@ class Dealer(models.Model):
     Contact_No = models.CharField(max_length = 20)
     Address = models.CharField(max_length = 100)
     Email = models.CharField(max_length = 50)
-    DC_Location = models.CharField(max_length = 100)
-    Aadhar_No =  models.IntegerField()
+    JD_Location = models.CharField(max_length = 100)
+    Ver_Proof =  models.IntegerField()
     Vehicle = models.CharField(max_length = 100)
     Location_Shop = models.CharField(max_length = 100)
     Shop_Regno = models.CharField(max_length = 100)
     Ewaste_Id = models.ForeignKey()
-    RP_Id =  models.ForeignKey()
     
